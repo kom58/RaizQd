@@ -11,6 +11,7 @@ public class Aplicacion {
     public Aplicacion() {
 
         btnCalcular.addActionListener(e -> hacerRaiz());
+        txtNumero.addActionListener(e -> hacerRaiz());
     }
 
     public void hacerRaiz (){
@@ -18,12 +19,19 @@ public class Aplicacion {
         RaizCuadrada rc = new RaizCuadrada();           // Crea objeto rc
         String numStr = txtNumero.getText();            // Lee el numStr
         double n = Double.parseDouble(numStr);          // Convierte numStr en double
+        String nStr;
+
         if ( n <= 0 ) {                                 // Comprueba números imposibles
             txtResultado.setText("La raíz de " + numStr + " no es posible ");
         }
         else {
             double raiz = rc.calcularRaizCuadrada(n);                       // LLamada a clase RaizCuadrada y retorna raiz
-            txtResultado.setText("La raíz de " + numStr + " es " + raiz);   // Escribe el resultado
+            if (raiz == Math.round(raiz)){
+                nStr = "" + (Math.round(raiz)); }
+            else {
+                nStr = String.format(" %.4f",raiz);
+            }
+            txtResultado.setText("La raíz de " + numStr + " es " + nStr);   // Escribe el resultado
         }
     }
 
