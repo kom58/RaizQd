@@ -1,31 +1,17 @@
 package raizquad;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Aplicacion {
     private JPanel panBase;
-    private JPanel panSuperior;
-    private JPanel panMedio;
-    private JPanel panInferior;
-    private JLabel txtTitulo;
     private JButton btnCalcular;
     private JLabel txtResultado;
     private JTextField txtNumero;
 
-
     public Aplicacion() {
 
-        btnCalcular.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-             hacerRaiz();
-
-            }
-        });
+        btnCalcular.addActionListener(e -> hacerRaiz());
     }
-
 
     public void hacerRaiz (){
 
@@ -39,7 +25,6 @@ public class Aplicacion {
             double raiz = rc.calcularRaizCuadrada(n);                       // LLamada a clase RaizCuadrada y retorna raiz
             txtResultado.setText("La raíz de " + numStr + " es " + raiz);   // Escribe el resultado
         }
-
     }
 
     public static void main(String[] args) {
