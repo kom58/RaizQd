@@ -22,7 +22,7 @@ public class Aplicacion {
         String nStr;
 
         if ( n <= 0 ) {                                 // Comprueba números imposibles
-            txtResultado.setText("La raíz de " + numStr + " no es posible ");
+            txtResultado.setText("La raíz de " + numStr + " IS NOT POSSIBLE ");
         }
         else {
             double raiz = rc.calcularRaizCuadrada(n);                       // LLamada a clase RaizCuadrada y retorna raiz
